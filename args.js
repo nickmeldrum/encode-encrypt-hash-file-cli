@@ -22,5 +22,6 @@ module.exports = {
     operation: process.argv[2],
     input: process.argv[3],
     output: process.argv[4],
-    encoding: 'utf8'
+    encoding: 'utf8',
+    args: process.argv.slice(2)
 }

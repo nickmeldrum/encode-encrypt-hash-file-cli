@@ -3,14 +3,12 @@
 const args = require('./args')
 
 exports.encrypt = function (input) {
+    console.log('um', args)
     return input
 }
 
 exports.decrypt = function (input) {
     return input
-}
-
-exports.hash = function (input) {
 }
 
 exports.base64encode = function (input) {
