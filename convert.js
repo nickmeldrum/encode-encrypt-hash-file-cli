@@ -14,6 +14,24 @@ exports.decrypt = function (args, input) {
     return decrypted + decipher.final('utf8')
 }
 
+function hash (hashMethod, args, input) {
+    return crypto.createHash(hashMethod)
+        .update(input, 'utf8')
+        .digest('hex')
+}
+
+exports.hashmd5 = function (args, input) {
+    return hash('md5', args, input)
+}
+
+exports.hashsha1 = function (args, input) {
+    return hash('sha1', args, input)
+}
+
+exports.hashsha256 = function (args, input) {
+    return hash('sha256', args, input)
+}
+
 exports.base64encode = function (args, input) {
     return new Buffer(input, args.encoding).toString('base64')
 }
