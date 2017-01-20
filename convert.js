@@ -3,15 +3,14 @@
 const crypto = require('crypto')
 
 exports.encrypt = function (args, input) {
-    console.log('password' + args.password)
     const cipher = crypto.createCipher('aes-256-ctr', args.password)
-    const crypted = cipher.update(text, 'utf8', 'hex')
+    const crypted = cipher.update(input, 'utf8', 'hex')
     return crypted + cipher.final('hex')
 }
 
 exports.decrypt = function (args, input) {
     const decipher = crypto.createDecipher('aes-256-ctr', args.password)
-    const decrypted = decipher.update(text, 'hex', 'utf8')
+    const decrypted = decipher.update(input, 'hex', 'utf8')
     return decrypted + decipher.final('utf8')
 }
 
