@@ -3,7 +3,7 @@
 const convert = require('./convert')
 
 function outputArgs() {
-    console.log('command line example: "node index operation inputfilename outputfilename [password]"')
+    console.log('command line example: "npm start operation inputfilename outputfilename [password]"')
     console.log(`available operations: [${Object.keys(convert).join(', ')}]`)
     console.log('password optional, required for encryption/ decryption operations')
 }
