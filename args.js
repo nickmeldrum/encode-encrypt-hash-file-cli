@@ -3,8 +3,9 @@
 const convert = require('./convert')
 
 function outputArgs() {
-    console.log('command line example: "node index operation inputfilename outputfilename"')
+    console.log('command line example: "node index operation inputfilename outputfilename [password]"')
     console.log(`available operations: [${Object.keys(convert).join(', ')}]`)
+    console.log('password optional, required for encryption/ decryption operations')
 }
 
 function errorAndExit(msg) {
@@ -23,5 +24,6 @@ module.exports = {
     input: process.argv[3],
     output: process.argv[4],
     encoding: 'utf8',
+    password: process.argv[5],
     args: process.argv.slice(2)
 }
