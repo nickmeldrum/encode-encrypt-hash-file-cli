@@ -4,10 +4,15 @@
   "description": "A simple wrapper of the crypto node library to provide a simple cli for encoding, encrypting and hashing files.",
   "main": "index.js",
   "dependencies": {},
-  "devDependencies": {},
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0"
+  },
   "scripts": {
     "start": "node index",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./node_modules/mocha/bin/mocha **/*-spec.js -G",
+    "watch": "node ./node_modules/nodemon/bin/nodemon.js -x npm test"
   },
   "repository": {
     "type": "git",
