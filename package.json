@@ -1,7 +1,7 @@
 {
-  "name": "node-file-convert",
-  "version": "0.0.1",
-  "description": "file conversion routines",
+  "name": "encode-encrypt-hash-file-cli",
+  "version": "0.0.2",
+  "description": "A simple wrapper of the crypto node library to provide a simple cli for encoding, encrypting and hashing files.",
   "main": "index.js",
   "dependencies": {},
   "devDependencies": {},
@@ -11,19 +11,20 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nickmeldrum/node-file-convert.git"
+    "url": "git+https://github.com/nickmeldrum/encode-encrypt-hash-file-cli.git"
   },
   "keywords": [
     "node",
     "file",
     "convert",
-    "encoding",
-    "encryption"
+    "encode",
+    "encrypt",
+    "hash"
   ],
   "author": "Nick Meldrum <nick@nickmeldrum.com> (http://nickmeldrum.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nickmeldrum/node-file-convert/issues"
+    "url": "https://github.com/nickmeldrum/encode-encrypt-hash-file-cli/issues"
   },
-  "homepage": "https://github.com/nickmeldrum/node-file-convert#readme"
+  "homepage": "https://github.com/nickmeldrum/encode-encrypt-hash-file-cli#readme"
 }
