@@ -10,7 +10,7 @@ command line example: `node index operation input-filename output-filename [pass
 
 available operations: `[encrypt, decrypt, hashmd5, hashsha1, hashsha256, base64encode, base64decode, rot13]`
 
-password optional, required for encryption/ decryption operations
+password only required for encryption/ decryption operations
 
 ## notes:
 
