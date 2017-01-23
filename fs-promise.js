@@ -2,7 +2,7 @@
 
 const fs = require('fs')
 
-exports.readFile = function (filename, encoding) {
+exports.read = function (filename, encoding) {
     return new Promise(function (resolve, reject) {
         fs.readFile(filename, encoding, function(err, data) {
             if (err) reject(err)
@@ -11,11 +11,20 @@ exports.readFile = function (filename, encoding) {
     })
 }
 
-exports.writeFile = function (filename, encoding) {
+exports.write = function (filename, encoding) {
     return new Promise(function (resolve, reject) {
-        fs.writeFile(filename, encoding, function(err, data) {
+        fs.writeFile(filename, encoding, function(err, written) {
             if (err) reject(err)
-            else resolve(data)
+            else resolve(written)
+        })
+    })
+}
+
+exports.delete = function (filename) {
+    return new Promise(function (resolve, reject) {
+        fs.unlink(filename, function(err) {
+            if (err) reject(err)
+            else resolve()
         })
     })
 }
