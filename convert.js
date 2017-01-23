@@ -4,19 +4,19 @@ const crypto = require('crypto')
 
 exports.encrypt = function (args, input) {
     const cipher = crypto.createCipher('aes-256-ctr', args.password)
-    const crypted = cipher.update(input, 'utf8', 'hex')
+    const crypted = cipher.update(input, args.encoding, 'hex')
     return crypted + cipher.final('hex')
 }
 
 exports.decrypt = function (args, input) {
     const decipher = crypto.createDecipher('aes-256-ctr', args.password)
-    const decrypted = decipher.update(input, 'hex', 'utf8')
-    return decrypted + decipher.final('utf8')
+    const decrypted = decipher.update(input, 'hex', args.encoding)
+    return decrypted + decipher.final(args.encoding)
 }
 
 function hash (hashMethod, args, input) {
     return crypto.createHash(hashMethod)
-        .update(input, 'utf8')
+        .update(input, args.encoding)
         .digest('hex')
 }
 

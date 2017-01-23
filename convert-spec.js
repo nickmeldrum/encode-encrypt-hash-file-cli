@@ -44,4 +44,36 @@ describe('convert', function() {
             expect(encoded).to.equal('YSB0ZXN0')
         })
     })
+
+    describe('hashing', function() {
+        it('md5 is different to original', function() {
+            const encoded = convert.hashmd5(args, input)
+            expect(encoded).to.not.equal(input)
+        })
+
+        it('md5 is correct hash', function() {
+            const encoded = convert.hashmd5(args, input)
+            expect(encoded).to.equal('2e03b237b4cd416b390b0a7150ac8029')
+        })
+
+        it('sha1 is different to original', function() {
+            const encoded = convert.hashsha1(args, input)
+            expect(encoded).to.not.equal(input)
+        })
+
+        it('sha1 is correct hash', function() {
+            const encoded = convert.hashsha1(args, input)
+            expect(encoded).to.equal('9939b05dd1a3763f5f856e065d277190d648994f')
+        })
+
+        it('sha256 is different to original', function() {
+            const encoded = convert.hashsha256(args, input)
+            expect(encoded).to.not.equal(input)
+        })
+
+        it('sha256 is correct hash', function() {
+            const encoded = convert.hashsha256(args, input)
+            expect(encoded).to.equal('a82639b6f8c3a6e536d8cc562c3b86ff4b012c84ab230c1e5be649aa9ad26d21')
+        })
+    })
 })
