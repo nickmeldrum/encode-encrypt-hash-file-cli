@@ -76,4 +76,27 @@ describe('convert', function() {
             expect(encoded).to.equal('a82639b6f8c3a6e536d8cc562c3b86ff4b012c84ab230c1e5be649aa9ad26d21')
         })
     })
+
+    describe('encrypting and decrypting', function() {
+        it('encrypt is different to original', function() {
+            args.password = 'Password1'
+            const encrypted = convert.encrypt(args, input)
+            expect(encrypted).to.not.equal(input)
+        })
+        
+        it('encrypting then decrypting with same password returns original', function() {
+            args.password = 'Password1'
+            const encrypted = convert.encrypt(args, input)
+            const decrypted = convert.decrypt(args, encrypted)
+            expect(decrypted).to.equal(input)
+        })
+        
+        it('encrypting then decrypting with wrong password does not return original', function() {
+            args.password = 'Password1'
+            const encrypted = convert.encrypt(args, input)
+            args.password = 'Password2'
+            const decrypted = convert.decrypt(args, encrypted)
+            expect(decrypted).to.not.equal(input)
+        })
+    })
 })
