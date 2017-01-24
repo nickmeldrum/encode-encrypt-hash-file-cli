@@ -9,7 +9,6 @@ exports.encrypt = function (args, input) {
 }
 
 exports.decrypt = function (args, input) {
-    console.log('nick', args.password)
     const decipher = crypto.createDecipher('aes-256-ctr', args.password)
     const decrypted = decipher.update(input, 'hex', args.encoding)
     return decrypted + decipher.final(args.encoding)
